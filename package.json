@@ -2,8 +2,10 @@
   "name": "objectfilter",
   "version": "1.0.0",
   "description": "Tool that allows to easily filter a regular javascript object in the same way of native array filter() method",
-  "main": "index.js",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "scripts": {
+    "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -20,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/luca1388/objectFilter/issues"
   },
-  "homepage": "https://github.com/luca1388/objectFilter#readme"
+  "homepage": "https://github.com/luca1388/objectFilter#readme",
+  "devDependencies": {
+    "typescript": "^4.2.2"
+  }
 }
