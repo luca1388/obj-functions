@@ -2,7 +2,7 @@ type GenericObject = {
   [key in string]: any
 };
 
-type FilterFunctionType = (key: string, value: any) => GenericObject;
+type FilterFunctionType = (key: string, value: any) => boolean;
 
 export const objectFilter = (object: GenericObject, filterFunction: FilterFunctionType) => {
   return Object.keys(object)
