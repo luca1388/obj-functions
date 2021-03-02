@@ -1,10 +1,10 @@
-type GenericObject = {
+export type GenericObject = {
   [key in string]: any
 };
 
-type FilterFunctionType = (key: string, value: any) => boolean;
+export type FilterFunction = (key: string, value: any) => boolean;
 
-export const objectFilter = (object: GenericObject, filterFunction: FilterFunctionType) => {
+export const objectFilter = (object: GenericObject, filterFunction: FilterFunction) => {
   return Object.keys(object)
     .filter((key) => filterFunction(key, object[key]))
     .reduce((filteredObject, currentKey) => {
