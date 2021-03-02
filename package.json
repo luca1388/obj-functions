@@ -1,5 +1,5 @@
 {
-  "name": "@luca1388/objectfilter",
+  "name": "object-filter",
   "version": "1.0.0",
   "description": "Tool that allows to filter a regular javascript object in the same way of native array filter() method",
   "main": "./dist/index.js",
