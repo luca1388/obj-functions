@@ -1,4 +1,4 @@
-# objectFilter
+# objFilter
 
 Implementation of the array-like function `filter()` for regular javascript objects. With this tool it's possible to create a new object containing only a subset of the given object key-value pairs without using a for loop. It behaves in the same way of the native array [filter function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter).
 
