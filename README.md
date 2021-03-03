@@ -26,7 +26,7 @@ console.log(negativeNumbers); // will print { field3: -4 }
 ```
 `objFilter(obj, callback)` accepts 2 parameters:
 - `obj` is the object to filter
-- `callback` is the function used to filter the object and that loops through all object fields. It accepts 2 parameters, the generic object key and the relative value: `callback(key, value)`.
+- `callback` is the function used to filter the object and that loops through all object fields. It accepts 2 parameters, the generic object key and the relative value: `callback(key, value)`. Callback should return `true` whenever current (key: value) pair should be kept in the returned object result.
 
 
 ### Developing
