@@ -1,4 +1,4 @@
-import { objectFilter } from "./index";
+import { objFilter } from "./index";
 
 const numbers: {[key in string]: number} = {
   field1: 9,
@@ -52,7 +52,7 @@ const fruits: {[key in string]: Fruit} = {
 describe("Filtering tests", () => {
   describe("Basic filtering functionalities", () => {
     test("It should filter out negative numbers in an object of numbers", () => {
-      const greaterThanZero = objectFilter(numbers, (_key, value: number) => value > 0);
+      const greaterThanZero = objFilter(numbers, (_key: string, value: number) => value > 0);
       expect(greaterThanZero).toEqual({
         field1: 9,
         field2: 5,
@@ -61,15 +61,15 @@ describe("Filtering tests", () => {
     });
 
     test("It should prune string values", () => {
-      const stringOnlyValues = objectFilter(
+      const stringOnlyValues = objFilter(
         objResponse,
-        (_key, value: any) => typeof value !== "string"
+        (_key: string, value: any) => typeof value !== "string"
       );
       expect(stringOnlyValues).toEqual({ userId: 1, id: 1 });
     });
 
     test("It should select only a particular key of an object", () => {
-      const selectedKeyObject = objectFilter(
+      const selectedKeyObject = objFilter(
         objResponse,
         (key:string) => key === "title"
       );
@@ -81,7 +81,7 @@ describe("Filtering tests", () => {
 
     test("It should select keys with given prefix", () => {
       const prefix = "message";
-      const prefixedKeys = objectFilter(strings, (key:string) =>
+      const prefixedKeys = objFilter(strings, (key:string) =>
         key.toLowerCase().startsWith(prefix)
       );
 
@@ -95,7 +95,7 @@ describe("Filtering tests", () => {
 
     test('It should search for given token inside key', () => {
         const search = 'melon';
-        const searchedObject = objectFilter(fruits, (key: string, value: Fruit) => key.indexOf(search) > -1 );
+        const searchedObject = objFilter(fruits, (key: string, value: Fruit) => key.indexOf(search) > -1 );
         expect(searchedObject).toEqual({
             "watermelon": {
                 "id": fruits['watermelon'].id,
