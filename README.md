@@ -10,7 +10,7 @@ npm install obj-functions
 
 ### Usage
 Import `objFilter` function from the package:
-```
+```js
 import { objFilter } from "obj-functions";
 
 const numbers = {
